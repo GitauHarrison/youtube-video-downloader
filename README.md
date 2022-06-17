@@ -1,4 +1,4 @@
-# Bold YouTube Downloader
+# Bold YouTube Video Downloader
 
 Want to download any YouTube video? No problem! Just type in the URL of the video and press the download button.
 
