@@ -1,8 +1,16 @@
 # Bold YouTube Video Downloader
 
+![byvd](app/static/images/byvd.gif)
+
+## Overview
 Want to download any YouTube video? No problem! Just type in the URL of the video and press the download button.
 
-![byvd](app/static/images/byvd.gif)
+The application allows an anonymous user to download any YouTube video. Instances where certain URL are not allowed include:
+- URL from a local machine ex. http://127.0.0.0:5000
+- Empty URL
+- URL from a non-YouTube video
+
+The user will be shown a friendly and polite error message if the URL is not valid.
 
 ## Tools Used
 
@@ -12,14 +20,14 @@ Want to download any YouTube video? No problem! Just type in the URL of the vide
 
 ## Deployment
 
-- [boldyvd]() on heroku
+- [byvd](https://byvd-app.herokuapp.com/) on heroku
 
 ## Licence
 - MIT
 
 ## Design
 
-- [byvd version 1.0.0](https://www.figma.com/proto/TAHwcWIrhvHNMvqmjQBkV1/bold-YT-downloader?node-id=0%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=4%3A31) on Figma
+- [byvd version 1](https://www.figma.com/proto/TAHwcWIrhvHNMvqmjQBkV1/bold-YT-downloader?node-id=0%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=4%3A31) on Figma
 
 ## Contribution
 
