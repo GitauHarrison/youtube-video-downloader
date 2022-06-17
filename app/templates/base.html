@@ -68,7 +68,7 @@
         <div class="row footer">
             <div class="col-md-12 text-center">
                 <hr>
-                <small>byvd  &copy; - 2022</small>
+                <small>byvd  &copy; - {{ moment().format('YYYY') }}</small>
             </div>
         </div>
     {% endblock %}
@@ -79,5 +79,6 @@
 <!-- All scripts will go here -->
 {% block scripts %}
     {{  super() }}
+    {{ moment.include_moment() }}
     
 {% endblock %}
