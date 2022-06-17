@@ -4,14 +4,18 @@
 {% block head %}
     {{  super() }}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">  
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'images/downloader.png') }}">
 {% endblock %}
 
 <!-- The title of our application is defined here -->
 {% block title %}
     {% if title %}
-        {{ title }} - YT Downloader
+        {{ title }} - byvd
     {% else %}
-        Download YouTube Videos
+        Bold YouTube Video Downloader
     {% endif %}
 {% endblock %}
 
@@ -26,11 +30,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=" {{ url_for('index') }} ">YT Downloader</a>
+            <a class="navbar-brand" href=" {{ url_for('index') }} ">Bold YouTube Video Downloader</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">            
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=" # ">Help?</a></li>
+                <li>
+                    <a href=" https://github.com/GitauHarrison/youtube-video-downloader" target="_blank">
+                        <img src="{{ url_for('static', filename = 'images/github-logo.png') }}" alt="Github logo" width="30" height="30">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/GitauHarrison1" target="_blank">
+                        <img src="{{ url_for('static', filename = 'images/twitter.png') }}" alt="Twitter logo" width="30" height="30">
+                    </a>
+                </li>
             </ul>                       
         </div>
     </div>
@@ -50,6 +63,16 @@
             {% endif %}
         {% endwith %}
         {% block app_context %}{% endblock %}
+
+        {% block footer %}    
+        <div class="row footer">
+            <div class="col-md-12 text-center">
+                <hr>
+                <small>byvd  &copy; - 2022</small>
+            </div>
+        </div>
+    {% endblock %}
+
     </div>
 {% endblock %}
 

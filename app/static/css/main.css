@@ -1,0 +1,202 @@
+/* ------------------------------------------------- */
+/* BASE STYLES */
+/* ------------------------------------------------- */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    /*Fills the viewport*/
+    width: 100%;
+    margin: 0px;
+    position: relative;
+    /*You have to include this in order to position other child items*/
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    line-height: 35px;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0px;
+}
+
+body::after {
+    content: '';
+    display: block;
+}
+
+/* ------------------ */
+/* TYPOGRAPHY */
+/* ------------------ */
+.navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #b07c0c;
+}
+
+h1 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.card-text {
+    font-size: 2.4rem;
+}
+
+/* ------------------ */
+/* BUTTON */
+/* ------------------ */
+
+/* Dropdown menu */
+select,
+.btn {
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.btn {
+    background-color: #af904c;
+    color: white;
+    width: 30%;
+}
+
+.btn:hover {
+    background-color: #b07c0c;
+    color: white;
+}
+
+.url-input {
+    padding: 50px 10px;
+    margin: 8px 0;
+}
+
+.url-btn {
+    width: 100%;
+}
+
+/* 
+.url-btn {
+    position:absolute;
+    left:85%;
+    top:0;
+    padding: 38px 20px;
+    width: 15%;
+}
+.url-btn:hover {
+    background-color: #b07c0c;
+    color: white;
+} */
+
+/* small screens */
+/* @media screen and (max-width: 600px) {
+    .url-input {
+        width: 100%;
+    }
+    .url-btn {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 18px 20px;
+        width: 90%;
+        margin-top: 110px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+} */
+@media screen and (min-width: 600px) {
+    .url-input {
+        width: 85%;
+        padding: 50px 10px;
+        margin: 8px 0;
+    }
+
+    .url-btn {
+        position: absolute;
+        left: 85%;
+        top: 0;
+        padding: 38px 20px;
+        width: 15%;
+    }
+
+    .url-btn:hover {
+        background-color: #b07c0c;
+        color: white;
+    }
+}
+
+/* ------------------ */
+/* CARD */
+/* ------------------ */
+.card {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    margin: 65px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        margin: 15px 25px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .navbar {
+        border-radius: 4px;
+        box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .navbar-brand {
+        font-size: 30px;
+    }
+}
+
+/* ------------------------------------------------- */
+/* FOOTER */
+/* ------------------------------------------------- */
+.footer {
+    margin-bottom: 0px;
+    position: absolute;
+    /*With the parent relative, we can set our footer to absolute*/
+    bottom: 0;
+    /*This takes it to the bottom*/
+    width: 60%;
+    height: 80px;
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+        height: 10px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .footer {
+        height: 30px;
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .footer {
+        height: 90px;
+        width: 90%;
+    }
+}

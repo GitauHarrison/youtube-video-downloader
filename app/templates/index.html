@@ -4,15 +4,53 @@
 {% block app_context %}
 <div class="row">
     <div class="col-md-12 text-center">
-        <h1>Download YouTube Videos</h1>
+        <h1>YouTube Video Link</h1>
     </div>  
 </div>
 <div class="row">
     <div class="col-md-12">
         <form method="POST">
-            <input class="form-control mt-3" type="text" placeholder="Enter the YouTube video URL" aria-label="default input example" name="url">
-            <button type="submit" class="btn btn-danger mt-3">Convert</button>
+            <input class="form-control mt-3 url-input" type="text" placeholder="Enter the YouTube video URL" aria-label="default input example" name="url">
+            <button type="submit" class="btn btn-danger mt-3 url-btn">Convert</button>          
         </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-center" style="width: 35rem;">
+            <img class="card-img-top image-fluid" style="max-width: 100%; height:auto;" src="{{ url_for('static', filename='images/free.png') }}" alt="Card image cap">
+            <div class="card-body">
+
+                <h2 class="card-title">FREE</h2>
+                <p class="card-text">
+                    This service is absolutely free of charge forever. You can use it for any purpose.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center" style="width: 35rem;">
+            <img class="card-img-top image-fluid" style="max-width: 100%; height:auto;" src="{{ url_for('static', filename='images/easy.png') }}" alt="Card image cap">
+            <div class="card-body">
+
+                <h2 class="card-title">EASY</h2>
+                <p class="card-text">
+                    Simply copy a video URL from YouTube and paste it in the input field above.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center" style="width: 35rem;">
+            <img class="card-img-top image-fluid" style="max-width: 100%; height:auto;" src="{{ url_for('static', filename='images/safe.png') }}" alt="Card image cap">
+            <div class="card-body">
+
+                <h2 class="card-title">SAFE</h2>
+                <p class="card-text">
+                    The platform and the downloaded video file are safe to use!
+                </p>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

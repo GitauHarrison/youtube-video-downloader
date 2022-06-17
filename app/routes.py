@@ -18,7 +18,7 @@ def index():
         except:
             flash('Error: invalid link')
         return render_template("download.html", url = url)
-    return render_template("index.html")
+    return render_template("index.html", title="Home")
 
 @app.route("/download", methods = ["GET", "POST"])
 def download():
