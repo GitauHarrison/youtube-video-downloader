@@ -9,15 +9,14 @@ from io import BytesIO
 def index():
     if request.method == "POST":
         session['link'] = request.form.get('url')
-        print(session['link'])
         try:
             url = YouTube(session['link'])
             url.check_availability()
-            print(url)
             flash(f'Downloading {url.title}')
         except:
-            flash('Error: invalid link')
-        return render_template("download.html", url = url)
+            flash('Error: invalid link or no link provided')
+            return redirect(url_for('index'))
+        return render_template("download.html", url=url)
     return render_template("index.html", title="Home")
 
 @app.route("/download", methods = ["GET", "POST"])
@@ -25,7 +24,6 @@ def download():
     if request.method == "POST":
         buffer = BytesIO()
         url = YouTube(session['link'])
-        print(url)
         itag = request.form.get("itag")
         video = url.streams.get_by_itag(itag)
         video.stream_to_buffer(buffer)
