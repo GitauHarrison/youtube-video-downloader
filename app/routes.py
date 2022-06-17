@@ -15,12 +15,13 @@ def index():
 
             def find_video_length():
                 duration = url.length
+                hours = duration // 3600
                 minutes = duration // 60
                 seconds = duration % 60
-                video_length = str(minutes) + ':' + str(seconds)
+                video_length = str(hours) + ':' + str(minutes) + ':' + str(seconds)
                 return video_length
             video_duration = find_video_length()
-            
+
             flash(f'Downloading {url.title}')
         except:
             flash('Error: invalid link or no link provided')
