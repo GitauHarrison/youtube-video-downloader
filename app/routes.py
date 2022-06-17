@@ -12,11 +12,20 @@ def index():
         try:
             url = YouTube(session['link'])
             url.check_availability()
+
+            def find_video_length():
+                duration = url.length
+                minutes = duration // 60
+                seconds = duration % 60
+                video_length = str(minutes) + ':' + str(seconds)
+                return video_length
+            video_duration = find_video_length()
+            
             flash(f'Downloading {url.title}')
         except:
             flash('Error: invalid link or no link provided')
             return redirect(url_for('index'))
-        return render_template("download.html", url=url)
+        return render_template("download.html", url=url, video_duration=video_duration)
     return render_template("index.html", title="Home")
 
 @app.route("/download", methods = ["GET", "POST"])
