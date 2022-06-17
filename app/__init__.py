@@ -12,4 +12,4 @@ bootstrap = Bootstrap(app)
 moment = Moment(app)
 
 
-from app import routes
+from app import routes, errors
