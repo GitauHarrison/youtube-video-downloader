@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_context %}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1>Download YouTube Videos</h1>
+    </div>  
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <form method="POST">
+            <input class="form-control mt-3" type="text" placeholder="Enter the YouTube video URL" aria-label="default input example" name="url">
+            <button type="submit" class="btn btn-danger mt-3">Convert</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
