@@ -2,6 +2,8 @@
 
 Want to download any YouTube video? No problem! Just type in the URL of the video and press the download button.
 
+![byvd](app/static/images/byvd.gif)
+
 ## Tools Used
 
 - Flask and python
@@ -76,7 +78,6 @@ def index():
                 try:
                     yt = YouTube(url)
                     yt.check_availability()
-                    title = yt.title
                     flash(f'Downloading {title}')
                     
                 except Exception as e:
@@ -85,7 +86,7 @@ def index():
     return render_template('index.html', title='Home', form=form)
 
 
-@app.route('/download/', methods=['GET', 'POST'])
+@app.route('/download', methods=['GET', 'POST'])
 def download():
     if request.method == 'POST':
         url = request.args.get('url')
