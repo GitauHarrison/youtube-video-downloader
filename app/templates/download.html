@@ -17,7 +17,7 @@
             <p>Duration: {{ video_duration }}</p>
             <form action="{{ url_for('download') }}" method="POST">
                 <select name="itag">
-                    {% for i in url.streams.filter(progressive=True) %}
+                    {% for i in resolution %}
                         <option value="{{ i.itag }}">{{ i.resolution }}</option>
                     {% endfor %}
                 </select>
