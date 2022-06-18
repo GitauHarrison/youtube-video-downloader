@@ -5,7 +5,7 @@
 ## Overview
 Want to download any YouTube video? No problem! Just type in the URL of the video and press the download button.
 
-The application allows an anonymous user to download any YouTube video. Instances where certain URL are not allowed include:
+The application allows an anonymous user to download any YouTube video. Instances where certain URLs are not allowed include:
 - URL from a local machine ex. http://127.0.0.0:5000
 - Empty URL
 - URL from a non-YouTube video
@@ -87,9 +87,9 @@ def index():
                     yt = YouTube(url)
                     yt.check_availability()
                     flash(f'Downloading {title}')
-                    
                 except Exception as e:
                     flash('Error: invalid link')
+                    return redirect(url_for('index'))
                 return redirect(url_for('download', url=url))
     return render_template('index.html', title='Home', form=form)
 
@@ -115,18 +115,10 @@ def download():
         parsed = urlparse(url)
         download_url = f'{parsed.geturl()}'
         yt = YouTube(download_url)
-        form = ConvertForm()
-        title = yt.title
-        thumbnail_url = yt.thumbnail_url
-        duration = yt.length
-        author = yt.author
+        form = ConvertForm()        
         resolution = yt.streams.filter(progressive=True)
         return render_template(
-            'download.html',
-            duration=duration,
-            thumbnail_url=thumbnail_url,
-            author=author,
-            title=title,
+            'download.html',            
             form=form,
             resolution=resolution)
 ```
