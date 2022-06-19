@@ -37,7 +37,7 @@ def index():
             
             video_duration = find_video_length()
             video_file_size = get_video_file_size()
-            resolution = url.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc()
+            resolution = url.streams.filter(adaptive=True, file_extension='mp4').order_by('resolution').desc()
             flash(f'Downloading {url.title}')
         except:
             flash('Error: invalid link or no link provided')
