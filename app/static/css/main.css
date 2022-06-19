@@ -85,6 +85,7 @@ select,
 
 .url-btn {
     width: 100%;
+    font-size: 5.5rem;
 }
 
 /* 
@@ -127,7 +128,7 @@ select,
         position: absolute;
         left: 85%;
         top: 0;
-        padding: 38px 20px;
+        padding: 11.5px 20px;
         width: 15%;
     }
 
@@ -151,6 +152,9 @@ select,
 @media screen and (max-width: 600px) {
     .card {
         margin: 15px 25px;
+    }
+    .url-btn {
+        font-size: 3rem;
     }
 }
 
@@ -191,6 +195,13 @@ select,
     .footer {
         height: 30px;
         width: 90%;
+    }
+    .url-btn {
+        font-size: 3.6rem;
+        padding: 23px 20px;
+    }
+    .card {
+        font-size: large;
     }
 }
 
