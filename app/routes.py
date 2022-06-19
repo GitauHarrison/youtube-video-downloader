@@ -1,3 +1,4 @@
+import mimetypes
 from app import app
 from flask import render_template, request, redirect, url_for, flash, send_file, session
 from pytube import YouTube
@@ -18,13 +19,24 @@ def index():
             url.check_availability()
 
             def find_video_length():
+                # Find the length of the video in hours, minutes, seconds
                 duration = url.length
                 hours = duration // 3600
                 minutes = duration // 60
                 seconds = duration % 60
                 video_length = str(hours) + ':' + str(minutes) + ':' + str(seconds)
                 return video_length
+
+            def get_video_file_size():
+                # Convert file size of video to GB or MB
+                file_size = url.streams.filter(progressive=True).order_by('resolution').desc().first().filesize
+                video_file_size_GB = round(file_size / (1024 * 1024 * 1024), 2)
+                video_file_size_MB = round(file_size / (1024 * 1024), 2)
+                best_video_file_size = str(video_file_size_GB) + ' GB' if video_file_size_GB > 1 else str(video_file_size_MB) + ' MB'
+                return best_video_file_size
+            
             video_duration = find_video_length()
+            video_file_size = get_video_file_size()
             resolution = url.streams.filter(adaptive=True, file_extension='mp4').order_by('resolution').desc()
             flash(f'Downloading {url.title}')
         except:
@@ -34,7 +46,8 @@ def index():
             "download.html",
             url=url,
             video_duration=video_duration,
-            resolution=resolution)
+            resolution=resolution,
+            best_video_file_size=video_file_size)
     return render_template("index.html", title="Home")
 
 

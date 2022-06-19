@@ -15,6 +15,7 @@
             <h2> {{ url.title }} </h2>
             <p>Author: {{ url.author }}</p>
             <p>Duration: {{ video_duration }}</p>
+            <p>Highest res file size: {{ best_video_file_size }} </p>
             <form action="{{ url_for('download') }}" method="POST">
                 <select name="itag">
                     {% for i in resolution %}
