@@ -21,6 +21,7 @@ The user will be shown a friendly and polite error message if the URL is not val
 ## Deployment
 
 - [byvd](https://byvd-app.herokuapp.com/) on heroku
+- [byvd](https://bold-youtube-video-downloader.onrender.com/) on Render
 
 ## Licence
 - MIT
