@@ -1,4 +1,4 @@
-# Bold YouTube Video Downloader
+# Save YouTube Video Downloader
 
 ![save](app/static/images/save.png)
 
