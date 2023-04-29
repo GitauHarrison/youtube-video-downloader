@@ -22,11 +22,44 @@ The user will be shown a friendly and polite error message if the URL is not val
 
 ## Other Details
 
-|  Demo   | Design    |  Contribution   | Licence |
-| --- | --- | --- |  --- |
-|  [On Render](https://save-ytv.onrender.com/)   |  [Figma](https://www.figma.com/proto/TAHwcWIrhvHNMvqmjQBkV1/bold-YT-downloader?node-id=0%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=4%3A31)   |  [![GitHub Contributors](https://img.shields.io/github/contributors/GitauHarrison/youtube-video-downloader)](https://github.com/GitauHarrison/youtube-video-downloader/graphs/contributors)   | [MIT](LICENCE) |
+| Design    |  Contribution   | Licence |
+| --- | --- |  --- |
+|  [Figma](https://www.figma.com/proto/TAHwcWIrhvHNMvqmjQBkV1/bold-YT-downloader?node-id=0%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=4%3A31)   |  [![GitHub Contributors](https://img.shields.io/github/contributors/GitauHarrison/youtube-video-downloader)](https://github.com/GitauHarrison/youtube-video-downloader/graphs/contributors)   | [MIT](LICENCE) |
 
 
+## Test Locally
+
+- Clone this repo:
+
+    ```python
+    $ git clone git@github.com:GitauHarrison/youtube-video-downloader.git
+    ```
+
+- Change directory to the cloned repo:
+
+    ```python
+    $ cd youtube-video-downloader
+    ```
+
+- Create and active your virtual environment:
+
+    ```python
+    $ mkvirtualenv venv
+    ```
+
+- Install project dependencies:
+
+    ```python
+    (venv)$ pip3 install -r requirements.txt
+    ```
+
+- Run the flask server:
+
+    ```python
+    (venv)$ flask run
+    ```
+
+- Paste the localhost link in your browser to see the application
 
 ## Pytube Usage
 
