@@ -1,32 +1,29 @@
 {% extends 'base.html' %}
-{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block app_context %}
-<div class="row">
-    <div class="col-md-12 text-center">
-        <h1>Download Video</h1>
-    </div>  
-</div>
-<div class="row" style="border: 1px solid #e1e1e1; margin: 10px 0;">
-        <div class="col-md-6" style="padding: 0px 0px;">
-            <img class="image-fluid" style="max-width: 100%; height:auto" src="{{ url.thumbnail_url }}" alt="url.title">
+{% block app_content %}
+<div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 text-center">
+    <div class="mr-auto place-self-center lg:col-span-12 lg:w-2/2 w-full">
+        <h1 class="font-bold">{{ title }}</h1>
+    </div>                                   
+</div> 
+<section class="bg-white dark:bg-gray-900">    
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-12">            
+            <div
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                    src="{{ url.thumbnail_url }}" alt="">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ url.title }}</h2>
+                    <p>Author: {{ url.author }}</p>
+                    <p>Duration: {{ video_duration }}</p>
+                    <p>Highest res file size: {{ best_video_file_size }} </p>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
+                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download</button>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-            <h2> {{ url.title }} </h2>
-            <p>Author: {{ url.author }}</p>
-            <p>Duration: {{ video_duration }}</p>
-            <p>Highest res file size: {{ best_video_file_size }} </p>
-            <form action="{{ url_for('download') }}" method="POST">
-                <select name="itag">
-                    {% for i in resolution %}
-                        <option value="{{ i.itag }}">{{ i.resolution }}</option>
-                    {% endfor %}
-                </select>
-                <button type="submit" class="btn btn-primary">Download</button>
-                <p style="text-decoration: underline;">
-                    <a href="{{ url_for('index') }}">Download Another Video</a>
-                </p>
-            </form>
-        </div>
-</div>
+    </div>
+</section>
 {% endblock %}

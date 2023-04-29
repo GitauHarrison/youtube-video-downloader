@@ -1,84 +1,98 @@
-{% extends 'bootstrap/base.html' %}
-
-<!-- Link all style files here -->
-{% block head %}
-    {{  super() }}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">  
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'images/downloader.png') }}">
-{% endblock %}
-
-<!-- The title of our application is defined here -->
-{% block title %}
-    {% if title %}
-        {{ title }} - byvd
-    {% else %}
-        Bold YouTube Video Downloader
-    {% endif %}
-{% endblock %}
-
-<!-- This is the navbar -->
-{% block navbar %}
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href=" {{ url_for('index') }} ">Bold YouTube Video Downloader</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">            
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href=" https://github.com/GitauHarrison/youtube-video-downloader" target="_blank">
-                        <img src="{{ url_for('static', filename = 'images/github-logo.png') }}" alt="Github logo" width="30" height="30">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% if title %}
+            <title>{{ title }} - Save</title>
+        {% else %}
+            <title>Save YouTube Video Downloader</title>
+        {% endif %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="https://flowbite.com/" class="flex items-center">
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Save™</span>
+                </a>
+                <div class="flex md:order-2">
+                    <a href="https://github.com/GitauHarrison/youtube-video-downloader" target="_blank"
+                        class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                        GitHub
                     </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/GitauHarrison1" target="_blank">
-                        <img src="{{ url_for('static', filename = 'images/twitter.png') }}" alt="Twitter logo" width="30" height="30">
-                    </a>
-                </li>
-            </ul>                       
+                    <button data-collapse-toggle="navbar-cta" type="button"
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                    <ul
+                        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">                        
+                        <li>
+                            <a href="https://twitter.com/GitauHarrison1" target="_blank"
+                                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                <img class="mr-3 h-6 sm:h-9" src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twiiter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=GEYWpVBGsM0" target="_blank"
+                                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                <img class="mr-3 h-6 sm:h-9" src="{{ url_for('static', filename='images/youtube.png') }}" alt="YouTube">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container mx-auto">
+            <!-- Flash message -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flex p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300" role="alert">                            
+                            <div>{{ message }}</div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- Child templates -->
+            {% block app_content %}{% endblock %}
         </div>
-    </div>
-</nav>
-{% endblock %}
 
-<!-- Contents of all our pages will go here -->
-{% block content %}
-    <div class="container">
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-success">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-        {% block app_context %}{% endblock %}
-
-        {% block footer %}    
-        <div class="row footer">
-            <div class="col-md-12 text-center">
-                <hr>
-                <small>byvd  &copy; - {{ moment().format('YYYY') }}</small>
+        <div class="container my-6 mx-auto px-4 md:px-12 text-center mt-4">
+            <div class="flex flex-wrap -mx-1 lg:-mx-4 h-100">
+                <!-- Footer -->
+                <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022- {{ moment().format('YYYY') }} <a href="{{ url_for('index') }}" class="hover:underline">Save™</a>. All Rights Reserved.
+                    </span>
+                    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">GitHub</a>
+                        </li>
+                    </ul>
+                </footer>
             </div>
         </div>
-    {% endblock %}
 
-    </div>
-{% endblock %}
+        
 
-<!-- All scripts will go here -->
-{% block scripts %}
-    {{  super() }}
-    {{ moment.include_moment() }}
-    
-{% endblock %}
+        <!-- MomentJS -->
+        {{ moment.include_moment() }}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+        <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+        
+    </body>
+</html>

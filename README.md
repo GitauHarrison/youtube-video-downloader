@@ -1,6 +1,8 @@
 # Bold YouTube Video Downloader
 
-![byvd](app/static/images/byvd.gif)
+![save](app/static/images/save.png)
+
+_April 2023: The [PyTube](https://pytube3.readthedocs.io/en/latest/) package has a lot of issues that make using it unsatisfactory. From REGEX errors to the package breaking down all of a sudden. As a result, the current application does not work. Until a time I will be interested in a fix, I will leave it at that: Unfortunately the URL does not get processed. The only upgrade to the project is UI enhancementst to utilize Tailwind CSS._
 
 ## Overview
 Want to download any YouTube video? No problem! Just type in the URL of the video and press the download button.
@@ -18,21 +20,13 @@ The user will be shown a friendly and polite error message if the URL is not val
 - Bootstrap and custom CSS
 - Pytube
 
-## Deployment
+## Other Details
 
-- [byvd](https://byvd-app.herokuapp.com/) on heroku
-- [byvd](https://bold-youtube-video-downloader.onrender.com/) on Render
+|  Demo   | Design    |  Contribution   | Licence |
+| --- | --- | --- |  --- |
+|  [On Render](https://bold-youtube-video-downloader.onrender.com/)   |  [Figma](https://www.figma.com/proto/TAHwcWIrhvHNMvqmjQBkV1/bold-YT-downloader?node-id=0%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=4%3A31)   |  [![GitHub Contributors](https://img.shields.io/github/contributors/GitauHarrison/youtube-video-downloader)](https://github.com/GitauHarrison/youtube-video-downloader/graphs/contributors)   | [MIT](LICENCE) |
 
-## Licence
-- MIT
 
-## Design
-
-- [byvd version 1](https://www.figma.com/proto/TAHwcWIrhvHNMvqmjQBkV1/bold-YT-downloader?node-id=0%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=4%3A31) on Figma
-
-## Contribution
-
-[![GitHub Contributors](https://img.shields.io/github/contributors/GitauHarrison/youtube-video-downloader)](https://github.com/GitauHarrison/youtube-video-downloader/graphs/contributors)
 
 ## Pytube Usage
 
